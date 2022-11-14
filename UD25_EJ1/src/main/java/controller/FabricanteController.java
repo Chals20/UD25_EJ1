@@ -38,7 +38,7 @@ public class FabricanteController {
 	}
 	
 	@GetMapping("/fabricante/{id}")
-	public Fabricante empleadoXID(@PathVariable(name="id") int id) {
+	public Fabricante empleadoXID(@PathVariable(name="codigo") int id) {
 		
 		Fabricante fabricanteXId= new Fabricante();
 		
@@ -50,7 +50,7 @@ public class FabricanteController {
 	}
 	
 	@PutMapping("/fabricante/{id}")
-	public Fabricante actualizarFabricante(@PathVariable(name="id")int id,@RequestBody Fabricante fabricante) {
+	public Fabricante actualizarFabricante(@PathVariable(name="codigo")int id,@RequestBody Fabricante fabricante) {
 		
 		Fabricante fabricante_seleccionado= new Fabricante();
 		Fabricante fabricante_actualizado= new Fabricante();
@@ -68,7 +68,7 @@ public class FabricanteController {
 	}
 	
 	@DeleteMapping("/fabricante/{id}")
-	public void eliminarFabricante(@PathVariable(name="id")int id) {
+	public void eliminarFabricante(@PathVariable(name="codigo")int id) {
 		f.eliminarFabricante(id);
 	}
 }
