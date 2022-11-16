@@ -1,36 +1,31 @@
-package dto;
+package com.ej1.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="articulo")
+@Table(name="articulos")
 public class Articulo {
 	
-	// Atributos de entidad articulo
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
+	@Column(name="codigo")
 	private int codigo;
 	
-	@Column(name = "nombre")
+	@Column(name="nombre")
 	private String nombre;
 	
-	@Column(name = "precio")
+	@Column(name="precio")
 	private int precio;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="fabricante")
 	private Fabricante fabricante;
-
-	public Articulo() {
-		
-	}
+	
+	public Articulo() {}
 
 	public Articulo(int codigo, String nombre, int precio, Fabricante fabricante) {
 		this.codigo = codigo;
@@ -63,6 +58,7 @@ public class Articulo {
 		this.precio = precio;
 	}
 
+	
 	public Fabricante getFabricante() {
 		return fabricante;
 	}
@@ -70,6 +66,7 @@ public class Articulo {
 	public void setFabricante(Fabricante fabricante) {
 		this.fabricante = fabricante;
 	}
+	
 
 	@Override
 	public String toString() {
