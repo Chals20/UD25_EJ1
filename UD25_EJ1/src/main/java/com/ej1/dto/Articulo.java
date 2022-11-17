@@ -67,11 +67,5 @@ public class Articulo {
 		this.fabricante = fabricante;
 	}
 	
-
-	@Override
-	public String toString() {
-		return "Articulo [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", fabricante=" + fabricante
-				+ "]";
-	}
 	
 }
